@@ -39,7 +39,7 @@ function addTask(name) {
     const DEFAULT_TASK = {
         name,
         status: STATUSES.TODO,
-        priority: PRIORITIES.LOW
+        priority: PRIORITIES.LOW,
     }
     if (name) {
         list.push(DEFAULT_TASK)
@@ -67,7 +67,7 @@ function showBy(by) {
                 console.log(` -`)
             }
         }
-    } else if ('priority') {
+    } else if (by === 'priority') {
         for (let priority in PRIORITIES) {
             console.log(`${PRIORITIES[priority]}:`)
             let count = 0
