@@ -48,12 +48,14 @@ function addTask(name) {
 
 function deleteTask(name) {
     const taskToDelete = list.findIndex(item => item.name === name)
-    list.splice(taskToDelete, 1)
+    if (~taskToDelete) {
+        list.splice(taskToDelete, 1)
+    }
 
 }
 
-function showBy(by) {
-    if (by === 'status') {
+function showBy(value) {
+    if (value === 'status') {
         for (let status in STATUSES) {
             console.log(`${STATUSES[status]}:`)
             let count = 0
@@ -67,7 +69,7 @@ function showBy(by) {
                 console.log(` -`)
             }
         }
-    } else if (by === 'priority') {
+    } else if (value === 'priority') {
         for (let priority in PRIORITIES) {
             console.log(`${PRIORITIES[priority]}:`)
             let count = 0
