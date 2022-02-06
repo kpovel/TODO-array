@@ -35,11 +35,11 @@ function changePriority(name, priority) {
     }
 }
 
-function addTask(name) {
+function addTask(name, status = STATUSES.TODO, priority = PRIORITIES.LOW) {
     const DEFAULT_TASK = {
         name,
-        status: STATUSES.TODO,
-        priority: PRIORITIES.LOW,
+        status,
+        priority,
     }
     if (name) {
         list.push(DEFAULT_TASK)
